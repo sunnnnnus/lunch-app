@@ -104,10 +104,7 @@
 
       navigator.geolocation.getCurrentPosition(
         pos => {
-          // const { latitude, longitude } = pos.coords; //抓取定位
-          const latitude = 25.051565; // 公司位址
-          const longitude = 121.524914;
-
+          const { latitude, longitude } = pos.coords; //抓取定位
           const selectedCategories = getSelectedCategories();
 
           getWeather(latitude, longitude);
