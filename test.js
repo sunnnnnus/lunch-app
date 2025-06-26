@@ -37,7 +37,7 @@
         });
     }
 
-    // 主要：推薦餐廳
+    // 推薦餐廳
     function recommendRestaurant(lat, lon, categories) {
       const mood = getUserMood();
       const userInput = document.getElementById("customKeyword").value.trim();
@@ -49,7 +49,7 @@
         keyword += " 重口味 炸物 辣";
       }
 
-      // ✅ 讀取使用者選擇的搜尋半徑
+      // 讀取使用者的搜尋半徑
       const radius = parseInt(document.getElementById("rangeSelect").value, 10);
 
       const userLocation = new google.maps.LatLng(lat, lon);
@@ -63,7 +63,7 @@
       const service = new google.maps.places.PlacesService(map);
       const request = {
         location: userLocation,
-        radius: radius, // ✅ 使用使用者選擇的距離
+        radius: radius, // 使用使用者選擇的距離
         keyword: keyword,
         type: 'restaurant'
       };
@@ -78,9 +78,8 @@
 
           restaurantName.textContent = pick.name;
           restaurantAddress.textContent = pick.vicinity || pick.formatted_address;
-          // mapLink.href = `https://www.google.com/maps/place/?q=place_id:${pick.place_id}`;
-
-          // ✅ 顯示餐廳照片
+            
+          // 顯示餐廳照片
           const photoBox = document.getElementById("photoBox");
           if (pick.photos && pick.photos.length > 0) {
             const photoUrl = pick.photos[0].getUrl({ maxWidth: 500, maxHeight: 300 });
@@ -119,13 +118,13 @@
       );
     });
 
-    //畫面載入時顯示天氣
+    // 畫面載入時顯示天氣
     window.addEventListener("load", () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
         pos => {
             const { latitude, longitude } = pos.coords;
-            getWeather(latitude, longitude); // ⬅️ 自動顯示天氣
+            getWeather(latitude, longitude); // 自動顯示天氣
         },
         err => {
             console.error("無法取得位置資訊", err);
