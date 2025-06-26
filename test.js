@@ -91,7 +91,8 @@
 
           resultBox.classList.remove("d-none");
         }else {
-          alert("找不到符合條件的餐廳😢，請試著放寬條件或擴大搜尋範圍！");
+          document.getElementById("errorBox").classList.remove("d-none");
+          document.getElementById("resultBox").classList.add("d-none"); 
         }
         });
     }
