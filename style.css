@@ -1,0 +1,32 @@
+.custom-round-btn{
+      background-color: #2e7d32; /* 深綠 */
+      color: white;
+      border: none;
+      border-radius: 80%;        /* 圓形 */
+      width: 96px;
+      height: 96px;
+      font-size: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .custom-round-btn{
+      background-color: #388e3c; /* hover 淺一點綠 */
+      transform: scale(1.05);    /* 微放大 */
+      cursor: pointer;
+    }
+    .custom-round-btn:active{
+      transform: scale(0.95);    /* 點下去縮小一點 */
+    }
+  .animate-title {
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+
+  .animate-title:hover {
+    transform: scale(1.05);
+    color: #2e7d32;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  }
