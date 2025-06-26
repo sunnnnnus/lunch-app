@@ -37,19 +37,30 @@
         });
     }
 
-    // 主要：推薦餐廳
+    // 推薦餐廳
     function recommendRestaurant(lat, lon, categories) {
       const mood = getUserMood();
       const userInput = document.getElementById("customKeyword").value.trim();
-      const keyword = userInput !== "" ? userInput : (categories.length > 0 ? categories.join(" ") : "美食");
+      let keywordParts = [];
 
-      if (mood === "happy") {
-        keyword += " 清淡 輕食";
-      } else if (mood === "sad") {
-        keyword += " 重口味 炸物 辣";
+      if (userInput !== "") {
+        keywordParts.push(userInput);
+      } else if (categories.length > 0) {
+        keywordParts.push(...categories);
+      } else {
+        keywordParts.push("美食");
       }
 
-      // ✅ 讀取使用者選擇的搜尋半徑
+      // 加入心情對應的食物關鍵字
+      if (mood === "happy") {
+        keywordParts.push("清淡", "輕食");
+      } else if (mood === "sad") {
+        keywordParts.push("重口味", "炸物", "辣");
+      }
+
+      const keyword = keywordParts.join(" ");
+
+      // 讀取使用者選擇的搜尋半徑
       const radius = parseInt(document.getElementById("rangeSelect").value, 10);
 
       const userLocation = new google.maps.LatLng(lat, lon);
@@ -63,7 +74,7 @@
       const service = new google.maps.places.PlacesService(map);
       const request = {
         location: userLocation,
-        radius: radius, // ✅ 使用使用者選擇的距離
+        radius: radius, // 使用使用者選擇的距離
         keyword: keyword,
         type: 'restaurant'
       };
@@ -80,7 +91,7 @@
           restaurantAddress.textContent = pick.vicinity || pick.formatted_address;
           // mapLink.href = `https://www.google.com/maps/place/?q=place_id:${pick.place_id}`;
 
-          // ✅ 顯示餐廳照片
+          // 顯示餐廳照片
           const photoBox = document.getElementById("photoBox");
           if (pick.photos && pick.photos.length > 0) {
             const photoUrl = pick.photos[0].getUrl({ maxWidth: 500, maxHeight: 300 });
@@ -91,6 +102,9 @@
           menuLink.href = `https://www.google.com/maps/place/?q=place_id:${pick.place_id}`;
 
           resultBox.classList.remove("d-none");
+        }else {
+          document.getElementById("errorBox").classList.remove("d-none");
+          document.getElementById("resultBox").classList.add("d-none"); 
         }
         });
     }
@@ -120,13 +134,13 @@
       );
     });
 
-    //畫面載入時顯示天氣
+    // 畫面載入時顯示天氣
     window.addEventListener("load", () => {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
         pos => {
             const { latitude, longitude } = pos.coords;
-            getWeather(latitude, longitude); // ⬅️ 自動顯示天氣
+            getWeather(latitude, longitude); // 自動顯示天氣
         },
         err => {
             console.error("無法取得位置資訊", err);
