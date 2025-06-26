@@ -41,13 +41,24 @@
     function recommendRestaurant(lat, lon, categories) {
       const mood = getUserMood();
       const userInput = document.getElementById("customKeyword").value.trim();
-      const keyword = userInput !== "" ? userInput : (categories.length > 0 ? categories.join(" ") : "美食");
+      let keywordParts = [];
 
-      if (mood === "happy") {
-        keyword += " 清淡 輕食";
-      } else if (mood === "sad") {
-        keyword += " 重口味 炸物 辣";
+      if (userInput !== "") {
+        keywordParts.push(userInput);
+      } else if (categories.length > 0) {
+        keywordParts.push(...categories);
+      } else {
+        keywordParts.push("美食");
       }
+
+      // 加入心情對應的食物關鍵字
+      if (mood === "happy") {
+        keywordParts.push("清淡", "輕食");
+      } else if (mood === "sad") {
+        keywordParts.push("重口味", "炸物", "辣");
+      }
+
+      const keyword = keywordParts.join(" ");
 
       // 讀取使用者的搜尋半徑
       const radius = parseInt(document.getElementById("rangeSelect").value, 10);
