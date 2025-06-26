@@ -92,14 +92,7 @@
 
           resultBox.classList.remove("d-none");
         }else {
-          restaurantName.textContent = "找不到符合條件的餐廳 😢";
-          restaurantAddress.textContent = "";
-          mapLink.href = "#";
-        
-          const photoBox = document.getElementById("photoBox");
-          photoBox.innerHTML = `<div class="text-muted">請試著放寬搜尋條件或擴大範圍喔！</div>`;
-        
-          resultBox.classList.remove("d-none");
+          alert("找不到符合條件的餐廳😢，請試著放寬條件或擴大搜尋範圍！");
         }
         });
     }
