@@ -35,12 +35,20 @@
 ## 📁 專案結構
 
 lunch-app/
-├── index.html # 主頁面
-├── style.css # 自訂樣式
-├── test.js # 主邏輯程式碼
-├── env.js # API 金鑰檔案（已加入 .gitignore）
+├── public/                     
+│   └── favicon.ico            
+├── src/                      
+│   ├── main.js                 # 進入點
+│   ├── style.css               
+│   ├── utils/                  
+│   │   └── weather.js          
+│   └── components/            
 ├── .gitignore
-└── README.md
+├── index.html                  # 頁面框架
+├── package.json
+├── README.md
+├── vite.config.js
+
 
 ---
 
