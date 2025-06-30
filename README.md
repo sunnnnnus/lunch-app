@@ -57,5 +57,6 @@ lunch-app/
 
 - 作者：Jamie
 - GitHub：[sunnnnnus](https://github.com/sunnnnnus)
-- 使用者經歷：軟創系在學、具基礎全端能力，目前積極轉職中
-
+- 學歷：軟創系在學  
+- 職涯目標：熟悉 Java、JavaScript、MySQL，具備前後端整合能力，正朝向全端工程師方向積極發展。
+- 聯絡方式：sunnnnnus.dev@gmail.com
