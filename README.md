@@ -49,4 +49,5 @@ lunch-app/
 
 - 作者：Jamie
 - GitHub：[sunnnnnus](https://github.com/sunnnnnus)
+- 使用者經歷：軟創系在學、具基礎全端能力，目前積極轉職中
 
