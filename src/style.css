@@ -1,0 +1,91 @@
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #f9f9f6;
+  color: #333;
+}
+  h1 {
+    font-weight: 700;
+  }
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: none;
+  }
+  .custom-round-btn {
+    background-color: #d4924b;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: bold;
+    border: none;
+    transition: 0.3s;
+  }
+  .custom-round-btn:hover {
+    background-color:#9c672e;
+    color: white;
+  }
+  #weather {
+    font-size: 1.1rem;
+    color: #f58a07;
+  }
+  .form-select, .form-control {
+    border-radius: 0.75rem;
+    border: 1px solid #ddd;
+  }
+  .form-label {
+    font-weight: 600;
+  }
+  small.text-muted {
+    display: block;
+    text-align: center;
+    margin-top: 0.25rem;
+  }
+  #resultBox {
+    background-color: #f9f4ef;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    padding: 1rem;
+  }
+  .btn-cozy {
+    background-color: #d4bfa3; /* 奶茶米棕 */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+.btn-cozy:hover {
+  background-color: #bfa78a; /* 深一點的奶茶色 */
+  color: white;
+}
+#photoBox {
+  text-align: center;
+}
+
+#photoBox img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#menuLink {
+  background-color: #d4924b;
+  border: none;
+  color: white;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+#menuLink:hover {
+  background-color: #b9773a;
+}
+
